@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../sourcecode_testgit/TEST_GIT"
+		}
+	],
+	"settings": {
+		"commentTranslate.targetLanguage": "vi"
+	}
+}

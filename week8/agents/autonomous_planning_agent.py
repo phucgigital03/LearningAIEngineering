@@ -166,6 +166,11 @@ class AutonomousPlanningAgent(Agent):
         messages = self.messages[:]
         done = False
         while not done:
+            #  Call the LLM to get the next action to take, which may include calling one of the tools.
+            #  If a tool is called, handle the tool call and then continue the loop, giving the LLM the
+            #  chance to call more tools or to finish.
+            #  If no tool is called , then we are done and can return the final result.
+            #  @@(do not have result when calling tools also stop)
             response = self.openai.chat.completions.create(
                 model=self.MODEL, messages=messages, tools=self.get_tools()
             )
